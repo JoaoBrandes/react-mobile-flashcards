@@ -7,7 +7,7 @@ export default class DeckDetails extends React.Component {
         const { navigation } = this.props;
         const deck = navigation.getParam('deck', {});
         const { title, questions } = deck
-        const questionsNum = questions.length
+        const questionsNum = questions && questions.length
         return (
             <View style={styles.main} >
                 <View style={styles.header}>

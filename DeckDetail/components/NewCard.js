@@ -39,6 +39,15 @@ class NewCard extends React.Component {
             }))
         }
     }
+
+    onChangeQuestion = (question) => {
+        this.setState({question})
+    }
+
+    onChangeAnswer = (answer) => {
+        this.setState({answer})
+    }
+
     render() {
         const { question, answer, loading } = this.state
         if (loading) {
@@ -56,9 +65,7 @@ class NewCard extends React.Component {
                         type="text"
                         placeholder="Question"
                         value={question}
-                        onChangeText={(question) => {
-                            this.setState({question})
-                        }}
+                        onChangeText={this.onChangeText}
                         multiline = {true}
                         numberOfLines = {4}
                     />
@@ -67,9 +74,7 @@ class NewCard extends React.Component {
                         type="text"
                         placeholder="Answer"
                         value={answer}
-                        onChangeText={(answer) => {
-                            this.setState({answer})
-                        }}
+                        onChangeText={this.onChangeAnswer}
                         multiline = {true}
                         numberOfLines = {4}
                     />

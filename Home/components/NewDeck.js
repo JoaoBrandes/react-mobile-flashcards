@@ -16,6 +16,9 @@ class NewDeck extends React.Component {
 
     handleOnSubmit = async () => {
         const { title } = this.state
+        if(!title) { 
+            return alert("Deck name should not be empty")
+        }
         this.setState((currState) => ({
             ...currState,
             loading:true
