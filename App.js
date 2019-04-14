@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import NewCard from './DeckDetail/components/NewCard';
 import QuizDeck from './DeckDetail/components/QuizDeck';
 import QuizResults from './DeckDetail/components/QuizResults';
+import { setLocalNotification } from './utils/notification'
 
 const RootStack = createStackNavigator({
   DeckList: {
@@ -64,6 +65,9 @@ let Navigation = createAppContainer(RootStack);
 
 // Render the app container component with the provider around it
 export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
   render() {
     return (
       <Provider store={createStore(DecksReducer)}>

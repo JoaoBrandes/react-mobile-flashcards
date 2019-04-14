@@ -1,8 +1,14 @@
 import React from 'react';
 import { Text, StyleSheet, View } from 'react-native'
 import { Button } from 'react-native-elements'
+import {clearLocalNotification, setLocalNotification} from '../../utils/notification'
+
 export default class QuizResults extends React.Component {
 
+    componentDidMount() {
+        clearLocalNotification()
+            .then(setLocalNotification)
+    }
     render() {
         const { navigation } = this.props;
         const totalQuestions = navigation.getParam('totalQuestions', 0);
