@@ -27,8 +27,7 @@ class NewDeck extends React.Component {
             this.props.navigation.navigate(
                 'DeckDetails', 
                 {
-                    title: title,
-                    questionsNum: 0
+                   deck
                 }
             )
         } catch (error) {

@@ -42,7 +42,7 @@ export default class QuizDeck extends React.Component {
     handleButtonClick = (correct) => {
         const { questions, currentQuestionNum, correctAnswers, totalQuestions } = this.state
         let updatedCorrectAnswers = correct ? correctAnswers + 1 : correctAnswers
-        if (currentQuestionNum+1 === totalQuestions) {
+        if (currentQuestionNum + 1 === totalQuestions) {
             const deck = this.props.navigation.getParam('deck', {});
             this.props.navigation.navigate('quizResults', {
                 correctAnswers: updatedCorrectAnswers,
@@ -51,10 +51,10 @@ export default class QuizDeck extends React.Component {
             })
         } else {
             this.setState((currState) => ({
-                currentQuestionText: questions[currentQuestionNum].Question,
+                currentQuestionText: questions[currentQuestionNum+1].Question,
                 currentQuestionNum: currentQuestionNum + 1,
                 correctAnswers: updatedCorrectAnswers,
-                currentAnswerText: questions[currentQuestionNum].Answer,
+                currentAnswerText: questions[currentQuestionNum+1].Answer,
                 showAnswer: false
             }))
         }

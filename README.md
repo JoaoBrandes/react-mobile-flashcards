@@ -16,3 +16,5 @@ If you already created a deck, it will appear in a lista in the main screen. Sel
 Deck Details screen, where you can start a quiz or create a new card. A Card contain a question and an answer.
 When you start a quiz, you will be shown all cards with their questions, and you should answer (honestly, no cheating)
 if you guessed the right answer for the question. At the end, the app will show how well you did.
+
+This project has been tested on an Android 8 device
